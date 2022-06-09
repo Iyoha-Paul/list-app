@@ -25,12 +25,9 @@ const Home = () => {
     const temp = { Name: name, Age: age, Bio: bio, Id: generateId() };
     setUsers([temp, ...users]);
   };
-  const handleDelete = (id: Number) => {
-    const temp: User[] | any = users.filter((user: User) => user.Id != id);
-    setUsers(temp);
-  };
+
   return (
-    <UserContext.Provider value={users}>
+    <UserContext.Provider value={{ users, setUsers }}>
       <div className="home container">
         <h1>List App!</h1>
         <section>
@@ -61,7 +58,7 @@ const Home = () => {
           </form>
         </section>
         <section>
-          <UserCard handleDelete={handleDelete} />
+          <UserCard />
         </section>
       </div>
     </UserContext.Provider>
