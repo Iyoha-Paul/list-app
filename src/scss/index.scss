@@ -1,0 +1,107 @@
+@import "config";
+body {
+  color: $secondary-color;
+  // height: 100vh;
+
+  font-size: 2.4rem;
+  // font-family: "Rubik", sans-serif;
+
+  margin: 0;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+section {
+  margin-bottom: 8rem;
+}
+footer {
+  background-color: rgba(62, 148, 254, 0.3);
+}
+@mixin btn {
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  color: white;
+  background-color: $primary-color;
+  // height: 3.5rem;
+  border-radius: 10px;
+  padding: 2rem 6rem;
+  @include Flebo-parallel;
+
+  // font-size: 1.4rem;
+  font-weight: 500;
+}
+.container {
+  max-width: $desktop-view;
+  margin: 0 auto;
+  padding: 0 7rem;
+  @include mobile {
+    max-width: $mobile-view;
+    padding: 0 3rem;
+  }
+}
+.home {
+  margin-top: 4rem;
+  h1 {
+    text-align: center;
+    color: $primary-color;
+    font-size: 5rem;
+    margin-bottom: 3rem;
+  }
+  h2 {
+    text-align: center;
+    color: $primary-color;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+  }
+  .user-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 40rem;
+    gap: 1rem;
+
+    margin: 2rem auto;
+    input {
+      padding: 2rem 4rem;
+      font-size: 2rem;
+    }
+    textarea {
+      font-size: 2rem;
+      padding: 2rem 4rem;
+    }
+    button {
+      @include btn;
+      font-size: 3rem;
+    }
+  }
+  .users {
+    h2 {
+      text-align: left;
+    }
+    .user-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      column-gap: 2rem;
+      row-gap: 4rem;
+      .user {
+        list-style: none;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        padding: 3rem 4rem;
+        border-radius: 8px;
+        text-align: center;
+        &__name {
+          font-size: 2.4rem;
+          text-decoration: dashed;
+          margin-bottom: 1.6rem;
+        }
+        &__age {
+          font-size: 1.8rem;
+          margin-bottom: 2rem;
+        }
+        &__bio {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}
